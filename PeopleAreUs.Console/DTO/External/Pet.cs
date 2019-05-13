@@ -1,5 +1,8 @@
-﻿namespace PeopleAreUs.Console.DTO.External
+﻿using System.Diagnostics;
+
+namespace PeopleAreUs.Console.DTO.External
 {
+    [DebuggerDisplay("{Name}:{Type}")]
     public class Pet
     {
         public string Name { get; set; }

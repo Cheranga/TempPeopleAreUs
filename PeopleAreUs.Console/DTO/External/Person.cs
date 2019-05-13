@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace PeopleAreUs.Console.DTO.External
 {
+    [DebuggerDisplay("{Name}:{Gender}")]
     public class Person
     {
         public string Name { get; set; }

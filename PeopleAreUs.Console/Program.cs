@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using PeopleAreUs.Console.Business.Models;
 using PeopleAreUs.Console.Core;
+using PeopleAreUs.Console.Mappers;
+using PeopleAreUs.Console.Specifications;
 using PeopleAreUs.Console.Util;
 
 namespace PeopleAreUs.Console
@@ -20,7 +24,19 @@ namespace PeopleAreUs.Console
 
             var client = serviceProvider.GetRequiredService<IPeopleAreUsHttpClient>();
 
-            var peopleData = await client.GetPeopleAsync();
+            var operation = await client.GetPeopleAsync();
+
+            if (operation.Status)
+            {
+                var mapper = new DtoPersonToBusinessPerson(new DtoPetToBusinessPet());
+
+                var mappedPeople = operation.Data.Select(x => mapper.Map(x)).ToList();
+
+                var specification = new PetTypeSpecification();
+
+                var catsOnlyOwners = mappedPeople.SelectMany(x => x.Pets).Where(x => specification.IsSatisfiedBy(x, PetType.Cat)).ToList();
+            }
+
         }
     }
 }

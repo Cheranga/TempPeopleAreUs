@@ -5,6 +5,8 @@ using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using PeopleAreUs.Console.DTO.External;
+using PeopleAreUs.Console.Mappers;
 using PeopleAreUs.Console.Util;
 
 namespace PeopleAreUs.Console.Core
@@ -31,6 +33,11 @@ namespace PeopleAreUs.Console.Core
                 var config = provider.GetRequiredService<IOptions<PeopleAreUsApiConfig>>().Value;
                 return config;
             });
+            //
+            // Mappers
+            //
+            services.AddSingleton<IMapper<Person, Business.Models.Person>, DtoPersonToBusinessPerson>();
+            services.AddSingleton<IMapper<Pet, Business.Models.Pet>, DtoPetToBusinessPet>();
             //
             // Http Client
             //

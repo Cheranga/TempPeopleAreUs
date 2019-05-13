@@ -39,7 +39,7 @@ namespace PeopleAreUs.Console.Mappers
                 return gender;
             }
 
-            throw new Exception($"Invalid gender: {value}");
+            return BusinessModels.Gender.None;
         }
     }
 }

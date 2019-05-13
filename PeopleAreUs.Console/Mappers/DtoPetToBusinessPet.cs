@@ -27,7 +27,7 @@ namespace PeopleAreUs.Console.Mappers
                 return petType;
             }
 
-            throw new Exception($"Invalid pet type: {value}");
+            return PetType.None;
         }
     }
 }
