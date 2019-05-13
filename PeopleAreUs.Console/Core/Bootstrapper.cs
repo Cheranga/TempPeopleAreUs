@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using PeopleAreUs.Console.DTO.External;
 using PeopleAreUs.Console.Mappers;
+using PeopleAreUs.Console.Services;
+using PeopleAreUs.Console.Specifications;
 using PeopleAreUs.Console.Util;
 
 namespace PeopleAreUs.Console.Core
@@ -18,6 +20,10 @@ namespace PeopleAreUs.Console.Core
                 throw new ArgumentNullException(nameof(services));
             }
 
+            //
+            // Enable logging
+            //
+            services.AddLogging();
             //
             // Configuration
             //
@@ -33,15 +39,25 @@ namespace PeopleAreUs.Console.Core
                 return config;
             });
             //
+            // Services
+            //
+            services.AddSingleton<IPeopleService, PeopleService>();
+            //
             // Mappers
             //
             services.AddSingleton<IMapper<Person, Business.Models.Person>, DtoPersonToBusinessPerson>();
             services.AddSingleton<IMapper<Pet, Business.Models.Pet>, DtoPetToBusinessPet>();
             //
+            // Specifications
+            //
+            services.AddSingleton<IPetTypeSpecification, PetTypeSpecification>();
+            //
             // Http Client
             //
             services.AddHttpClient<IPeopleAreUsHttpClient, PeopleAreUsHttpClient>();
-
+            //
+            // Data converters
+            //
             services.AddSingleton<IPeopleDataConverter, JsonPeopleDataConverter>();
 
             var serviceProvider = services.BuildServiceProvider();

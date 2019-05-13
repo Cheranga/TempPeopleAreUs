@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace PeopleAreUs.Console.Business.Models
 {
+    [DebuggerDisplay("{Gender}:{Name}")]
     public class Person
     {
         public Person()
