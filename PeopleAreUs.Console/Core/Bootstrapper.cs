@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -19,6 +17,7 @@ namespace PeopleAreUs.Console.Core
             {
                 throw new ArgumentNullException(nameof(services));
             }
+
             //
             // Configuration
             //

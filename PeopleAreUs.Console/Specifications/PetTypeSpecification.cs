@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using PeopleAreUs.Console.Business.Models;
+﻿using PeopleAreUs.Console.Business.Models;
 
 namespace PeopleAreUs.Console.Specifications
 {

@@ -28,7 +28,7 @@ namespace PeopleAreUs.Console.Util
             if (!httpResponse.IsSuccessStatusCode)
             {
                 _logger.LogError($"Cannot retrieve people data from the external API: {httpResponse.ReasonPhrase}");
-                return ResultStatus<List<Person>>.Failure($"Cannot retrieve people data from the API");
+                return ResultStatus<List<Person>>.Failure("Cannot retrieve people data from the API");
             }
 
             var content = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);

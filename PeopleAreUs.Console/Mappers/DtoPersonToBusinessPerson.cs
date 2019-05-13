@@ -15,15 +15,15 @@ namespace PeopleAreUs.Console.Mappers
             _petMapper = petMapper;
         }
 
-        public Business.Models.Person Map(ExternalDto.Person source)
+        public BusinessModels.Person Map(ExternalDto.Person source)
         {
             if (source == null)
             {
                 throw new ArgumentNullException(nameof(source));
             }
 
-            var pets = (source.Pets?.ToList()) ?? new List<ExternalDto.Pet>();
-            return new Business.Models.Person
+            var pets = source.Pets?.ToList() ?? new List<ExternalDto.Pet>();
+            return new BusinessModels.Person
             {
                 Name = source.Name,
                 Age = source.Age,

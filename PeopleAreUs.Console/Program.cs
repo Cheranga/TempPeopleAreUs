@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using PeopleAreUs.Console.Business.Models;
@@ -10,14 +9,14 @@ using PeopleAreUs.Console.Util;
 
 namespace PeopleAreUs.Console
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             MainAsync().GetAwaiter().GetResult();
         }
 
-        static async Task MainAsync()
+        private static async Task MainAsync()
         {
             var services = new ServiceCollection();
             var serviceProvider = Bootstrapper.GetServiceProvider(services);
@@ -36,7 +35,6 @@ namespace PeopleAreUs.Console
 
                 var catsOnlyOwners = mappedPeople.SelectMany(x => x.Pets).Where(x => specification.IsSatisfiedBy(x, PetType.Cat)).ToList();
             }
-
         }
     }
 }
