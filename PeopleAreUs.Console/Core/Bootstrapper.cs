@@ -8,6 +8,7 @@ using PeopleAreUs.Console.Application.ViewModels;
 using PeopleAreUs.Console.DTO.External;
 using PeopleAreUs.Console.DTO.Internal;
 using PeopleAreUs.Console.Mappers;
+using PeopleAreUs.Console.Output;
 using PeopleAreUs.Console.Services;
 using PeopleAreUs.Console.Specifications;
 using PeopleAreUs.Console.Util;

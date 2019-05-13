@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using PeopleAreUs.Console.Application;
+using PeopleAreUs.Console.Application.Requests;
 using PeopleAreUs.Console.Business.Models;
 using PeopleAreUs.Console.Core;
 using PeopleAreUs.Console.DTO.Internal;

@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using PeopleAreUs.Console.Application;
+using PeopleAreUs.Console.Application.Requests;
 using PeopleAreUs.Console.Application.ViewModels;
 using PeopleAreUs.Console.Business.Models;
 using PeopleAreUs.Console.Core;
@@ -51,7 +53,11 @@ namespace PeopleAreUs.Console
             //    }
             //});
 
-            
+
+            var serviceProvider = Bootstrapper.GetServiceProvider(new ServiceCollection());
+            var manager = serviceProvider.GetRequiredService<IPeopleManager>();
+            await manager.ShowPetsAsync(new ShowPetsRequest(PetType.Cat));
+
         }
     }
 }
