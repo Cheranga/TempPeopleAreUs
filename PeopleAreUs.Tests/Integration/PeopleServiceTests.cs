@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using PeopleAreUs.Console.Application;
 using PeopleAreUs.Console.Business.Models;
 using PeopleAreUs.Console.Core;
 using PeopleAreUs.Console.DTO.Internal;
@@ -22,6 +23,18 @@ namespace PeopleAreUs.Tests.Integration
 
             Assert.NotNull(operation.Data?.People);
             Assert.NotEmpty(operation.Data.People);
+        }
+    }
+
+    public class PeopleManagerTests
+    {
+        [Fact]
+        public async Task Test()
+        {
+            var serviceProvider = Bootstrapper.GetServiceProvider(new ServiceCollection());
+            var manager = serviceProvider.GetRequiredService<IPeopleManager>();
+
+            await manager.ShowPetsAsync(new ShowPetsRequest(PetType.Cat));
         }
     }
 }

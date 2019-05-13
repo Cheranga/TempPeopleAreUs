@@ -41,15 +41,17 @@ namespace PeopleAreUs.Console
             //    var catsOnlyOwners = mappedPeople.SelectMany(x => x.Pets).Where(x => specification.IsSatisfiedBy(x, PetType.Cat)).ToList();
             //}
 
-            var renderer = new PetsByOwnerGenderRenderer();
-            await renderer.RenderAsync(new PetsByOwnerGenderViewModel
-            {
-                PetsMappedByOwnersGender = new Dictionary<Gender, List<string>>
-                {
-                    {Gender.Male, new List<string> {"a", "b", "c"}},
-                    {Gender.Female, new List<string> {"p", "q", "r"}},
-                }
-            });
+            //var renderer = new PetsByOwnerGenderRenderer();
+            //await renderer.RenderAsync(new PetsByOwnerGenderViewModel
+            //{
+            //    PetsMappedByOwnersGender = new Dictionary<Gender, List<string>>
+            //    {
+            //        {Gender.Male, new List<string> {"a", "b", "c"}},
+            //        {Gender.Female, new List<string> {"p", "q", "r"}},
+            //    }
+            //});
+
+            
         }
     }
 }
