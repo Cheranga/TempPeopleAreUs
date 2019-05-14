@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using PeopleAreUs.Core;
@@ -7,7 +8,7 @@ using PeopleAreUs.DTO;
 
 namespace PeopleAreUs.Infrastructure
 {
-    internal class JsonPeopleDataConverter : IPeopleDataConverter
+    public class JsonPeopleDataConverter : IPeopleDataConverter
     {
         private readonly ILogger<JsonPeopleDataConverter> _logger;
 

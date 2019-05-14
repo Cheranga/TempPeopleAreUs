@@ -5,7 +5,7 @@ using Pet = PeopleAreUs.DTO.Pet;
 
 namespace PeopleAreUs.Services.Mappers
 {
-    internal class DtoPetToBusinessPet : IMapper<Pet, Domain.Models.Pet>
+    public class DtoPetToBusinessPet : IMapper<Pet, Domain.Models.Pet>
     {
         public Domain.Models.Pet Map(Pet source)
         {

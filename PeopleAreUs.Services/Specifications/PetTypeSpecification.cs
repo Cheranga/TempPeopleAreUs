@@ -2,7 +2,7 @@
 
 namespace PeopleAreUs.Services.Specifications
 {
-    internal class PetTypeSpecification : IPetTypeSpecification
+    public class PetTypeSpecification : IPetTypeSpecification
     {
         public bool IsSatisfiedBy(Pet pet, PetType petType)
         {

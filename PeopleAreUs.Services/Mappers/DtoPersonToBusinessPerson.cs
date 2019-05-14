@@ -6,13 +6,13 @@ using PeopleAreUs.DTO;
 
 namespace PeopleAreUs.Services.Mappers
 {
-    internal class DtoPersonToBusinessPerson : IMapper<Person, Domain.Models.Person>
+    public class DtoPersonToBusinessPerson : IMapper<Person, Domain.Models.Person>
     {
         private readonly IMapper<Pet, Domain.Models.Pet> _petMapper;
 
         public DtoPersonToBusinessPerson(IMapper<Pet, Domain.Models.Pet> petMapper)
         {
-            _petMapper = petMapper;
+            _petMapper = petMapper ?? throw new ArgumentNullException(nameof(petMapper));
         }
 
         public Domain.Models.Person Map(Person source)
@@ -28,7 +28,7 @@ namespace PeopleAreUs.Services.Mappers
                 Name = source.Name,
                 Age = source.Age,
                 Gender = GetGender(source.Gender),
-                Pets = pets.Select(x => _petMapper.Map(x))
+                Pets = pets.Select(x => _petMapper.Map(x)).ToList()
             };
         }
 
