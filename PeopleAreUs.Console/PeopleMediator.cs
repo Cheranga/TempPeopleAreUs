@@ -1,25 +1,25 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using PeopleAreUs.Console.Application.Requests;
-using PeopleAreUs.Console.Application.ViewModels;
 using PeopleAreUs.Console.Output;
+using PeopleAreUs.Console.Requests;
+using PeopleAreUs.Console.ViewModels;
 using PeopleAreUs.Core;
 using PeopleAreUs.Services;
 using PeopleAreUs.Services.Requests;
 using PeopleAreUs.Services.Responses;
 
-namespace PeopleAreUs.Console.Application
+namespace PeopleAreUs.Console
 {
-    public class PeopleManager : IPeopleManager
+    public class PeopleMediator : IPeopleMediator
     {
         private readonly IPeopleService _peopleService;
         private readonly IMapper<GetPetOwnersResponse, PetsByOwnerGenderViewModel> _mapper;
         private readonly IRenderer<PetsByOwnerGenderViewModel> _renderer;
-        private readonly ILogger<PeopleManager> _logger;
+        private readonly ILogger<PeopleMediator> _logger;
 
-        public PeopleManager(IPeopleService peopleService, IMapper<GetPetOwnersResponse, PetsByOwnerGenderViewModel> mapper,
-            IRenderer<PetsByOwnerGenderViewModel> renderer, ILogger<PeopleManager> logger)
+        public PeopleMediator(IPeopleService peopleService, IMapper<GetPetOwnersResponse, PetsByOwnerGenderViewModel> mapper,
+            IRenderer<PetsByOwnerGenderViewModel> renderer, ILogger<PeopleMediator> logger)
         {
             _peopleService = peopleService;
             _mapper = mapper;

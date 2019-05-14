@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using PeopleAreUs.Console.Application;
-using PeopleAreUs.Console.Application.Requests;
-using PeopleAreUs.Console.Core;
+using PeopleAreUs.Console.Requests;
 using PeopleAreUs.Domain.Models;
 
 namespace PeopleAreUs.Console
@@ -20,7 +18,7 @@ namespace PeopleAreUs.Console
         private static async Task MainAsync()
         {
             var serviceProvider = Bootstrapper.GetServiceProvider(new ServiceCollection());
-            var manager = serviceProvider.GetRequiredService<IPeopleManager>();
+            var manager = serviceProvider.GetRequiredService<IPeopleMediator>();
             await manager.ShowPetsAsync(new ShowPetsRequest(PetType.Cat));
 
         }

@@ -1,6 +1,6 @@
 ﻿using PeopleAreUs.Domain.Models;
 
-namespace PeopleAreUs.Console.Application.Requests
+namespace PeopleAreUs.Console.Requests
 {
     public class ShowPetsRequest
     {

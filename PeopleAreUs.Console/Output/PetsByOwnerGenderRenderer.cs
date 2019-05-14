@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using PeopleAreUs.Console.Application.ViewModels;
+using PeopleAreUs.Console.ViewModels;
 
 namespace PeopleAreUs.Console.Output
 {

@@ -1,12 +1,12 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using PeopleAreUs.Console.Application;
-using PeopleAreUs.Console.Application.Requests;
+using PeopleAreUs.Console;
+using PeopleAreUs.Console.Requests;
 using PeopleAreUs.Domain.Models;
 using PeopleAreUs.Services;
 using PeopleAreUs.Services.Requests;
 using Xunit;
-using Bootstrapper = PeopleAreUs.Console.Core.Bootstrapper;
+using Bootstrapper = PeopleAreUs.Console.Bootstrapper;
 
 namespace PeopleAreUs.Tests.Integration
 {
@@ -33,7 +33,7 @@ namespace PeopleAreUs.Tests.Integration
         public async Task Test()
         {
             var serviceProvider = Bootstrapper.GetServiceProvider(new ServiceCollection());
-            var manager = serviceProvider.GetRequiredService<IPeopleManager>();
+            var manager = serviceProvider.GetRequiredService<IPeopleMediator>();
 
             await manager.ShowPetsAsync(new ShowPetsRequest(PetType.Cat));
         }

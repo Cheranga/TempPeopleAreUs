@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using PeopleAreUs.Domain.Models;
 
-namespace PeopleAreUs.Console.Application.ViewModels
+namespace PeopleAreUs.Console.ViewModels
 {
     public class PetsByOwnerGenderViewModel
     {
