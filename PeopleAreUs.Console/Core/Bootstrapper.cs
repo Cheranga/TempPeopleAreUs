@@ -5,14 +5,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using PeopleAreUs.Console.Application;
 using PeopleAreUs.Console.Application.ViewModels;
-using PeopleAreUs.Console.DTO.Internal;
 using PeopleAreUs.Console.Mappers;
 using PeopleAreUs.Console.Output;
-using PeopleAreUs.Console.Services;
 using PeopleAreUs.Core;
 using PeopleAreUs.DTO;
 using PeopleAreUs.Infrastructure;
+using PeopleAreUs.Services;
 using PeopleAreUs.Services.Mappers;
+using PeopleAreUs.Services.Responses;
 using PeopleAreUs.Services.Specifications;
 
 namespace PeopleAreUs.Console.Core

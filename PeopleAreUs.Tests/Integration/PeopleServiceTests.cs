@@ -2,11 +2,11 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using PeopleAreUs.Console.Application;
 using PeopleAreUs.Console.Application.Requests;
-using PeopleAreUs.Console.Core;
-using PeopleAreUs.Console.DTO.Internal;
-using PeopleAreUs.Console.Services;
 using PeopleAreUs.Domain.Models;
+using PeopleAreUs.Services;
+using PeopleAreUs.Services.Requests;
 using Xunit;
+using Bootstrapper = PeopleAreUs.Console.Core.Bootstrapper;
 
 namespace PeopleAreUs.Tests.Integration
 {

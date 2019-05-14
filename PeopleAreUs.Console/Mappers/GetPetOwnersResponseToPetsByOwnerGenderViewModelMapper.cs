@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using PeopleAreUs.Console.Application.ViewModels;
-using PeopleAreUs.Console.DTO.Internal;
 using PeopleAreUs.Core;
+using PeopleAreUs.Services.Responses;
 
 namespace PeopleAreUs.Console.Mappers
 {
