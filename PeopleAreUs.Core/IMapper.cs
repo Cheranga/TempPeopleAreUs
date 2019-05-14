@@ -1,4 +1,4 @@
-﻿namespace PeopleAreUs.Console.Mappers
+﻿namespace PeopleAreUs.Core
 {
     public interface IMapper<in TSource, out TTarget> where TSource : class where TTarget : class, new()
     {

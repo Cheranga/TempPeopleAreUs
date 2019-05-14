@@ -1,8 +1,9 @@
 ﻿using System.Threading.Tasks;
-using PeopleAreUs.Console.DTO.Internal;
 using PeopleAreUs.Core;
+using PeopleAreUs.Services.Requests;
+using PeopleAreUs.Services.Responses;
 
-namespace PeopleAreUs.Console.Services
+namespace PeopleAreUs.Services
 {
     public interface IPeopleService
     {

@@ -1,6 +1,6 @@
-﻿using PeopleAreUs.Console.Business.Models;
+﻿using PeopleAreUs.Domain.Models;
 
-namespace PeopleAreUs.Console.Specifications
+namespace PeopleAreUs.Services.Specifications
 {
     public interface IPetTypeSpecification
     {

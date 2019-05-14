@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using PeopleAreUs.Console.Core;
-using PeopleAreUs.Console.DTO.External;
+using PeopleAreUs.Core;
+using PeopleAreUs.DTO;
 
-namespace PeopleAreUs.Console.Util
+namespace PeopleAreUs.Infrastructure
 {
     public class JsonPeopleDataConverter : IPeopleDataConverter
     {
@@ -16,24 +16,24 @@ namespace PeopleAreUs.Console.Util
             _logger = logger;
         }
 
-        public ResultStatus<List<Person>> Convert(string content)
+        public OperationResult<List<Person>> Convert(string content)
         {
             if (string.IsNullOrEmpty(content))
             {
                 _logger.LogError("Empty content. Cannot deserialize data");
-                return ResultStatus<List<Person>>.Failure("Empty content. Cannot deserialize data");
+                return OperationResult<List<Person>>.Failure("Empty content. Cannot deserialize data");
             }
 
             try
             {
                 var people = JsonConvert.DeserializeObject<List<Person>>(content);
 
-                return ResultStatus<List<Person>>.Success(people);
+                return OperationResult<List<Person>>.Success(people);
             }
             catch (Exception exception)
             {
                 _logger.LogError($"Cannot deserialize data: {exception}");
-                return ResultStatus<List<Person>>.Failure($"Invalid content data: {content}");
+                return OperationResult<List<Person>>.Failure($"Invalid content data: {content}");
             }
         }
     }

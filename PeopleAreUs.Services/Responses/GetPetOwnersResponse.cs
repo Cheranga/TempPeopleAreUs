@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using PeopleAreUs.Domain.Models;
 
-namespace PeopleAreUs.Console.DTO.Internal
+namespace PeopleAreUs.Services.Responses
 {
     public class GetPetOwnersResponse
     {

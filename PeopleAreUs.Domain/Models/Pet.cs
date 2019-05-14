@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace PeopleAreUs.Console.Business.Models
+namespace PeopleAreUs.Domain.Models
 {
     [DebuggerDisplay("{Type}:{Name}")]
     public class Pet

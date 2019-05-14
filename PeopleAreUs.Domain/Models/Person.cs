@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace PeopleAreUs.Console.DTO.External
+namespace PeopleAreUs.Domain.Models
 {
-    [DebuggerDisplay("{Name}:{Gender}")]
+    [DebuggerDisplay("{Gender}:{Name}")]
     public class Person
     {
         public Person()
@@ -12,8 +12,9 @@ namespace PeopleAreUs.Console.DTO.External
         }
 
         public string Name { get; set; }
-        public string Gender { get; set; }
         public int Age { get; set; }
+        public Gender Gender { get; set; }
+
         public IEnumerable<Pet> Pets { get; set; }
     }
 }

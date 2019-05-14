@@ -1,19 +1,20 @@
 ﻿using System;
-using PeopleAreUs.Console.Business.Models;
-using Pet = PeopleAreUs.Console.DTO.External.Pet;
+using PeopleAreUs.Core;
+using PeopleAreUs.Domain.Models;
+using Pet = PeopleAreUs.DTO.Pet;
 
-namespace PeopleAreUs.Console.Mappers
+namespace PeopleAreUs.Services.Mappers
 {
-    public class DtoPetToBusinessPet : IMapper<Pet, Business.Models.Pet>
+    public class DtoPetToBusinessPet : IMapper<Pet, Domain.Models.Pet>
     {
-        public Business.Models.Pet Map(Pet source)
+        public Domain.Models.Pet Map(Pet source)
         {
             if (source == null)
             {
                 throw new ArgumentNullException(nameof(source));
             }
 
-            return new Business.Models.Pet
+            return new Domain.Models.Pet
             {
                 Name = source.Name,
                 Type = GetPetType(source.Type)

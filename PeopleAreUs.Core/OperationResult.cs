@@ -1,31 +1,31 @@
-﻿namespace PeopleAreUs.Console.Core
+﻿namespace PeopleAreUs.Core
 {
-    public class ResultStatus<T>
+    public class OperationResult<T>
     {
         public bool Status { get; set; }
         public string Message { get; set; }
         public T Data { get; set; }
 
-        public static ResultStatus<T> Success()
+        public static OperationResult<T> Success()
         {
-            return new ResultStatus<T>
+            return new OperationResult<T>
             {
                 Status = true
             };
         }
 
-        public static ResultStatus<T> Success(T data)
+        public static OperationResult<T> Success(T data)
         {
-            return new ResultStatus<T>
+            return new OperationResult<T>
             {
                 Status = true,
                 Data = data
             };
         }
 
-        public static ResultStatus<T> Failure(string message)
+        public static OperationResult<T> Failure(string message)
         {
-            return new ResultStatus<T>
+            return new OperationResult<T>
             {
                 Status = false,
                 Message = message

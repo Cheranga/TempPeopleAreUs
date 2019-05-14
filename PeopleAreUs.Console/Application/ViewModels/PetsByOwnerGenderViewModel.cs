@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using PeopleAreUs.Console.Business.Models;
+using PeopleAreUs.Domain.Models;
 
 namespace PeopleAreUs.Console.Application.ViewModels
 {

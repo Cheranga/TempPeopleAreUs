@@ -1,4 +1,4 @@
-﻿using PeopleAreUs.Console.Business.Models;
+﻿using PeopleAreUs.Domain.Models;
 
 namespace PeopleAreUs.Console.Application.Requests
 {

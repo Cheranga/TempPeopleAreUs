@@ -1,4 +1,4 @@
-﻿namespace PeopleAreUs.Console.Business.Models
+﻿namespace PeopleAreUs.Domain.Models
 {
     public enum PetType
     {

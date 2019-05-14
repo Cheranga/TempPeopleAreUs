@@ -1,6 +1,6 @@
 ﻿using PeopleAreUs.Domain.Models;
 
-namespace PeopleAreUs.Console.DTO.Internal
+namespace PeopleAreUs.Services.Requests
 {
     public class GetPetOwnersRequest
     {

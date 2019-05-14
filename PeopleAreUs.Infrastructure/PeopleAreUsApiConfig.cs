@@ -1,4 +1,4 @@
-﻿namespace PeopleAreUs.Console.Util
+﻿namespace PeopleAreUs.Infrastructure
 {
     public class PeopleAreUsApiConfig
     {

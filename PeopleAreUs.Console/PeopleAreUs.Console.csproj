@@ -15,6 +15,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PeopleAreUs.Core\PeopleAreUs.Core.csproj" />
+    <ProjectReference Include="..\PeopleAreUs.Domain\PeopleAreUs.Domain.csproj" />
+    <ProjectReference Include="..\PeopleAreUs.DTO\PeopleAreUs.DTO.csproj" />
+    <ProjectReference Include="..\PeopleAreUs.Infrastructure\PeopleAreUs.Infrastructure.csproj" />
+    <ProjectReference Include="..\PeopleAreUs.Services\PeopleAreUs.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

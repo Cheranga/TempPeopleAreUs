@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using PeopleAreUs.Console.Application.Requests;
 using PeopleAreUs.Console.Application.ViewModels;
 using PeopleAreUs.Console.DTO.Internal;
-using PeopleAreUs.Console.Mappers;
 using PeopleAreUs.Console.Output;
 using PeopleAreUs.Console.Services;
+using PeopleAreUs.Core;
 
 namespace PeopleAreUs.Console.Application
 {

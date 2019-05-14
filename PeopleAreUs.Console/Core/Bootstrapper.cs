@@ -5,13 +5,15 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using PeopleAreUs.Console.Application;
 using PeopleAreUs.Console.Application.ViewModels;
-using PeopleAreUs.Console.DTO.External;
 using PeopleAreUs.Console.DTO.Internal;
 using PeopleAreUs.Console.Mappers;
 using PeopleAreUs.Console.Output;
 using PeopleAreUs.Console.Services;
-using PeopleAreUs.Console.Specifications;
-using PeopleAreUs.Console.Util;
+using PeopleAreUs.Core;
+using PeopleAreUs.DTO;
+using PeopleAreUs.Infrastructure;
+using PeopleAreUs.Services.Mappers;
+using PeopleAreUs.Services.Specifications;
 
 namespace PeopleAreUs.Console.Core
 {
@@ -53,8 +55,8 @@ namespace PeopleAreUs.Console.Core
             //
             // Mappers
             //
-            services.AddSingleton<IMapper<Person, Business.Models.Person>, DtoPersonToBusinessPerson>();
-            services.AddSingleton<IMapper<Pet, Business.Models.Pet>, DtoPetToBusinessPet>();
+            services.AddSingleton<IMapper<Person, Domain.Models.Person>, DtoPersonToBusinessPerson>();
+            services.AddSingleton<IMapper<Pet, Domain.Models.Pet>, DtoPetToBusinessPet>();
             services.AddSingleton<IMapper<GetPetOwnersResponse, PetsByOwnerGenderViewModel>, GetPetOwnersResponseToPetsByOwnerGenderViewModelMapper>();
             //
             // Specifications

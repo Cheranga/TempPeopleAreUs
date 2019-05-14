@@ -2,6 +2,7 @@
 using System.Linq;
 using PeopleAreUs.Console.Application.ViewModels;
 using PeopleAreUs.Console.DTO.Internal;
+using PeopleAreUs.Core;
 
 namespace PeopleAreUs.Console.Mappers
 {

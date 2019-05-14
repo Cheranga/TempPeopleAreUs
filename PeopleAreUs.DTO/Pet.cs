@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace PeopleAreUs.Console.DTO.External
+namespace PeopleAreUs.DTO
 {
     [DebuggerDisplay("{Name}:{Type}")]
     public class Pet

@@ -2,10 +2,10 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using PeopleAreUs.Console.Core;
-using PeopleAreUs.Console.DTO.External;
+using PeopleAreUs.Core;
+using PeopleAreUs.DTO;
 
-namespace PeopleAreUs.Console.Util
+namespace PeopleAreUs.Infrastructure
 {
     public class PeopleAreUsHttpClient : IPeopleAreUsHttpClient
     {
@@ -22,29 +22,29 @@ namespace PeopleAreUs.Console.Util
             _logger = logger;
         }
 
-        public async Task<ResultStatus<List<Person>>> GetPeopleAsync()
+        public async Task<OperationResult<List<Person>>> GetPeopleAsync()
         {
             var httpResponse = await _client.GetAsync(_config.Url).ConfigureAwait(false);
             if (!httpResponse.IsSuccessStatusCode)
             {
                 _logger.LogError($"Cannot retrieve people data from the external API: {httpResponse.ReasonPhrase}");
-                return ResultStatus<List<Person>>.Failure("Cannot retrieve people data from the API");
+                return OperationResult<List<Person>>.Failure("Cannot retrieve people data from the API");
             }
 
             var content = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
             if (string.IsNullOrEmpty(content))
             {
                 _logger.LogError("The API returned empty content");
-                return ResultStatus<List<Person>>.Failure("No people data to process");
+                return OperationResult<List<Person>>.Failure("No people data to process");
             }
 
             var operation = _converter.Convert(content);
             if (operation.Status)
             {
-                return ResultStatus<List<Person>>.Success(operation.Data);
+                return OperationResult<List<Person>>.Success(operation.Data);
             }
 
-            return ResultStatus<List<Person>>.Failure(operation.Message);
+            return OperationResult<List<Person>>.Failure(operation.Message);
         }
     }
 }

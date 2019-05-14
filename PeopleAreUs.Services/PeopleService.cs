@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using PeopleAreUs.Console.DTO.Internal;
 using PeopleAreUs.Core;
 using PeopleAreUs.DTO;
 using PeopleAreUs.Infrastructure;
+using PeopleAreUs.Services.Requests;
+using PeopleAreUs.Services.Responses;
 using PeopleAreUs.Services.Specifications;
 
-namespace PeopleAreUs.Console.Services
+namespace PeopleAreUs.Services
 {
     public class PeopleService : IPeopleService
     {
