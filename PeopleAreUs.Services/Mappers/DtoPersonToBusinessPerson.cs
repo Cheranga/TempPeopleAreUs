@@ -6,7 +6,7 @@ using PeopleAreUs.DTO;
 
 namespace PeopleAreUs.Services.Mappers
 {
-    public class DtoPersonToBusinessPerson : IMapper<Person, Domain.Models.Person>
+    internal class DtoPersonToBusinessPerson : IMapper<Person, Domain.Models.Person>
     {
         private readonly IMapper<Pet, Domain.Models.Pet> _petMapper;
 

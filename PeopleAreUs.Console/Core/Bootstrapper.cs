@@ -33,21 +33,21 @@ namespace PeopleAreUs.Console.Core
             //
             // Configuration
             //
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
+            //var configuration = new ConfigurationBuilder()
+            //    .SetBasePath(Directory.GetCurrentDirectory())
+            //    .AddJsonFile("appsettings.json")
+            //    .Build();
 
-            services.Configure<PeopleAreUsApiConfig>(configuration.GetSection("PeopleAreUsApi"));
-            services.AddSingleton(provider =>
-            {
-                var config = provider.GetRequiredService<IOptions<PeopleAreUsApiConfig>>().Value;
-                return config;
-            });
+            //services.Configure<PeopleAreUsApiConfig>(configuration.GetSection("PeopleAreUsApi"));
+            //services.AddSingleton(provider =>
+            //{
+            //    var config = provider.GetRequiredService<IOptions<PeopleAreUsApiConfig>>().Value;
+            //    return config;
+            //});
             //
             // Services
             //
-            services.AddSingleton<IPeopleService, PeopleService>();
+            services.UseServices();
             //
             // Managers
             //
@@ -55,25 +55,11 @@ namespace PeopleAreUs.Console.Core
             //
             // Mappers
             //
-            services.AddSingleton<IMapper<Person, Domain.Models.Person>, DtoPersonToBusinessPerson>();
-            services.AddSingleton<IMapper<Pet, Domain.Models.Pet>, DtoPetToBusinessPet>();
             services.AddSingleton<IMapper<GetPetOwnersResponse, PetsByOwnerGenderViewModel>, GetPetOwnersResponseToPetsByOwnerGenderViewModelMapper>();
-            //
-            // Specifications
-            //
-            services.AddSingleton<IPetTypeSpecification, PetTypeSpecification>();
             //
             // Renderers
             //
             services.AddSingleton<IRenderer<PetsByOwnerGenderViewModel>, PetsByOwnerGenderRenderer>();
-            //
-            // Http Client
-            //
-            services.AddHttpClient<IPeopleAreUsHttpClient, PeopleAreUsHttpClient>();
-            //
-            // Data converters
-            //
-            services.AddSingleton<IPeopleDataConverter, JsonPeopleDataConverter>();
 
             var serviceProvider = services.BuildServiceProvider();
             return serviceProvider;

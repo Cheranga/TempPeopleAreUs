@@ -12,7 +12,7 @@ using PeopleAreUs.Services.Specifications;
 
 namespace PeopleAreUs.Services
 {
-    public class PeopleService : IPeopleService
+    internal class PeopleService : IPeopleService
     {
         private readonly IPeopleAreUsHttpClient _client;
         private readonly IPetTypeSpecification _petTypeSpecification;

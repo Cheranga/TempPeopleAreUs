@@ -7,7 +7,7 @@ using PeopleAreUs.DTO;
 
 namespace PeopleAreUs.Infrastructure
 {
-    public class PeopleAreUsHttpClient : IPeopleAreUsHttpClient
+    internal class PeopleAreUsHttpClient : IPeopleAreUsHttpClient
     {
         private readonly HttpClient _client;
         private readonly PeopleAreUsApiConfig _config;

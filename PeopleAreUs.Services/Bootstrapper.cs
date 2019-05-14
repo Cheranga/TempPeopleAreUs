@@ -24,8 +24,14 @@ namespace PeopleAreUs.Services
 
             RegisterMappers(services);
             RegisterSpecifications(services);
+            RegisterServices(services);
 
             UseInfrastructure(services);
+        }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            services.AddSingleton<IPeopleService, PeopleService>();
         }
 
         private static void RegisterMappers(IServiceCollection services)

@@ -7,7 +7,7 @@ using PeopleAreUs.DTO;
 
 namespace PeopleAreUs.Infrastructure
 {
-    public class JsonPeopleDataConverter : IPeopleDataConverter
+    internal class JsonPeopleDataConverter : IPeopleDataConverter
     {
         private readonly ILogger<JsonPeopleDataConverter> _logger;
 
