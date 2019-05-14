@@ -9,7 +9,7 @@ using Xunit;
 using Person = PeopleAreUs.DTO.Person;
 using Pet = PeopleAreUs.DTO.Pet;
 
-namespace PeopleAreUs.Services.Tests.Unit
+namespace PeopleAreUs.Services.Tests
 {
     public class DtoPersonToBusinessPersonTests
     {

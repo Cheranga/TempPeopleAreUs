@@ -4,7 +4,7 @@ using PeopleAreUs.Services.Mappers;
 using Xunit;
 using Pet = PeopleAreUs.DTO.Pet;
 
-namespace PeopleAreUs.Services.Tests.Unit
+namespace PeopleAreUs.Services.Tests
 {
     public class DtoPetToBusinessPetTests
     {

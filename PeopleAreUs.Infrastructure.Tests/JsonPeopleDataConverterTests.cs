@@ -2,7 +2,7 @@
 using Moq;
 using Xunit;
 
-namespace PeopleAreUs.Infrastructure.Tests.Unit
+namespace PeopleAreUs.Infrastructure.Tests
 {
     public class JsonPeopleDataConverterTests
     {

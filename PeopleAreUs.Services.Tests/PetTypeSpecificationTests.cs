@@ -2,7 +2,7 @@
 using PeopleAreUs.Services.Specifications;
 using Xunit;
 
-namespace PeopleAreUs.Services.Tests.Unit
+namespace PeopleAreUs.Services.Tests
 {
     public class PetTypeSpecificationTests
     {
